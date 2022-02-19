@@ -46,13 +46,13 @@ class App extends Component {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/shop' element={<ShopPage />} />
+          <Route path='/shop/*' element={<ShopPage />} />
           <Route path='/checkout' element={<CheckoutPage />} />
           <Route
             path='/signin'
             element={
               this.props.currentUser ? (
-                <Navigate to='/' />
+                <Navigate replace to='/' />
               ) : (
                 <SignInAndSignUpPage />
               )
